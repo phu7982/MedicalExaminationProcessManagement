@@ -1,6 +1,6 @@
 ﻿CREATE DATABASE MEPM
 USE MEPM
-drop database MEPM
+
 
 
 CREATE TABLE BENHNHAN 
@@ -79,7 +79,7 @@ CREATE TABLE DICHVU
    TenDV nvarchar(50) not null,
    DonGia int check(DonGia > 0)
    MaKhoa varchar(10) not null,
-   constraint RBKN_DV_KH foreign key (MaKhoa) references KHOA(MaKhoa)
+   constraint RBKN_DV_KH foreign key (MaKhoa) references KHOA(MaKhoa)		--Ràng buộc khóa ngoại của bảng DICHVU với bảng KHOA thông qua MaKhoa
 )
 SELECT * FROM dichvu
 
