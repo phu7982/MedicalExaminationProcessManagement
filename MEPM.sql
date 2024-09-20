@@ -1,6 +1,6 @@
 ﻿CREATE DATABASE MEPM
 USE MEPM
-
+drop database MEPM
 
 
 CREATE TABLE BENHNHAN 
@@ -32,9 +32,7 @@ SELECT * FROM bacsi
 CREATE TABLE KHOA
 (
    MaKhoa varchar(10) primary key,
-   TenKhoa nvarchar(50) not null,
-   MaDV varchar(10) not null,
-   constraint RBKN_KH_DV foreign key (MaDV) references DICHVU(MaDV),
+   TenKhoa nvarchar(50) not null
 )
 SELECT * FROM khoa
 
@@ -80,8 +78,11 @@ CREATE TABLE DICHVU
    MaDV varchar(10) primary key,
    TenDV nvarchar(50) not null,
    DonGia int check(DonGia > 0)
+   MaKhoa varchar(10) not null,
+   constraint RBKN_DV_KH foreign key (MaKhoa) references KHOA(MaKhoa)
 )
 SELECT * FROM dichvu
+
 
 
 
