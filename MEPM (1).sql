@@ -313,7 +313,7 @@ CREATE TABLE HOADONTHUOC
    NgayLap date not null,
    Tongtien float check(Tongtien > 0)
 )
-SELECT * FROM hoadonTHUOC
+SELECT * FROM HOADONTHUOC
 EXEC sp_rename 'HOADON', 'HOADONTHUOC'
 
 INSERT INTO HOADONTHUOC VALUES
