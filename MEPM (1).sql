@@ -52,6 +52,7 @@ CREATE TABLE BACSI
    ChuyenNganh nvarchar(50) not null,
    MaKhoa varchar(10) not null,
    constraint RBKN_BS_KH foreign key (MaKhoa) references KHOA(MaKhoa)
+    
 )
 SELECT * FROM bacsi
 
@@ -314,10 +315,10 @@ SELECT * FROM HOADONTHUOC
 EXEC sp_rename 'HOADON', 'HOADONTHUOC'
 
 INSERT INTO HOADONTHUOC VALUES
-('HD001', 'DT001', 'BN01', '08/19/2024',
-('HD002', 'DT002', 'BN02', '07/22/2024',
-('HD003', 'DT003', 'BN04', '08/06/2024',
-('HD004', ''
+('HD001', 'DT001', 'BN01', '08/19/2024',),
+('HD002', 'DT002', 'BN02', '07/22/2024'),
+('HD003', 'DT003', 'BN03', '08/06/2024'),
+('HD004', 'DT004', 'BN04', '11/11/2024')
 CREATE TABLE HOADONDV
 (
    MaHD varchar(10) not null,
