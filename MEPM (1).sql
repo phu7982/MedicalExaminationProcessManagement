@@ -120,14 +120,11 @@ CREATE TABLE THUOC
    MaThuoc varchar(10) primary key,
    TenThuoc nvarchar(50) not null,
    GiaThuoc float check(GiaThuoc > 0)
+   Donvi nvarchar(10),
+   MoTa nvarchar(250)
 )
 SELECT * FROM thuoc
 
-ALTER TABLE THUOC
-Drop column MoTa
-
-ALTER TABLE THUOC
-add MoTa nvarchar(250)
 
 INSERT INTO THUOC VALUES
 --THUOC TIM MACH
