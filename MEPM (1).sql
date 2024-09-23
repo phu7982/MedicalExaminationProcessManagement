@@ -87,7 +87,7 @@ INSERT INTO BACSI VALUES
 ('K14BS02', N'Nguyễn Đức Tâm', N'Chuyên Khoa Tai - Mũi - Họng', 'K14'),
 ('K14BS03', N'Hồ Quang Hiếu', N'Chuyên Khoa Tai - Mũi - Họng', 'K14'),
 ('K15BS01', N'Trần Văn Duy', N' Chuyên Khoa Răng - Hàm - Mặt', 'K15'),
-('K15BS02', N'Đỗ Thị Phương Thảo', N'ChuyênKhoa Răng - Hàm - Mặt', 'K15')
+('K15BS02', N'Đỗ Thị Phương Thảo', N'Chuyên Khoa Răng - Hàm - Mặt', 'K15')
 
 
 CREATE TABLE KHOA
@@ -216,12 +216,26 @@ CREATE TABLE DONTHUOC
 SELECT * FROM donthuoc
 
 INSERT INTO DONTHUOC VALUES
-('DT001', 'BN01', 'K02BS01'),
-('DT002', 'BN02', 'K14BS01'),
-('DT003', 'BN04', 'K02BS02'),
-('DT004', 'BN05', 'K09BS01'),
-('DT005', 'BN06', 'K13BS01'),
-
+('DT001', 'K02BS01', 'BN01'),
+('DT002', 'K14BS01', 'BN02'),
+('DT003', 'K02BS02', 'BN04'),
+('DT004', 'K09BS01', 'BN05'),
+('DT005', 'K13BS01', 'BN06'),
+('DT006', 'K01BS01', 'BN07'),
+('DT007', 'K10BS03', 'BN08'),
+('DT008', 'K05BS02', 'BN10'),
+('DT009', 'K06BS01', 'BN11'),
+('DT010', 'K02BS02', 'BN12'),
+('DT011', 'K14BS03', 'BN14'),
+('DT012', 'K03BS01', 'BN15'),
+('DT013', 'K10BS02', 'BN16'),
+('DT014', 'K07BS01', 'BN18'),
+('DT015', 'K11BS01', 'BN19'),
+('DT016', 'K02BS03', 'BN20'),
+('DT017', 'K09BS03', 'BN21'),
+('DT018', 'K13BS01', 'BN23'),
+('DT019', 'K01BS02', 'BN24'),
+('DT020', 'K03BS01', 'BN25')
 CREATE TABLE CT_DONTHUOC 
 (
    MaDT varchar(10) not null,
@@ -237,9 +251,23 @@ INSERT INTO CT_DONTHUOC VALUES
 ('DT001', 'T008', 2),
 ('DT002', 'T050', 1),
 ('DT003', 'T006', 12),
-('DT00'
-
-
+('DT004', 'T016', 60), ('DT004', 'T034', 3), ('DT004', 'T036', 60),
+('DT005', 'T052', 1),
+('DT006', 'T001', 60), ('DT006', 'T003', 2),
+('DT007', 'T003', 2), ('DT007', 'T034', 4),
+('DT008', 'T025', 3), ('DT008', 'T026', 60),
+('DT009', 'T028', 1), ('DT009', 'T030', 1), ('DT009', 'T034', 2),
+('DT010', 'T006', 20), ('DT010', 'T034', 3),
+('DT011', 'T042', 1), ('DT011', 'T049', 1),
+('DT012', 'T017', 1),
+('DT013', 'T028', 1), ('DT013', 'T034', 4),
+('DT014', 'T034', 4), ('DT014', 'T035', 20), ('DT014', 'T036', 60),
+('DT015', 'T042', 2),
+('DT016', 'T008', 60), ('DT016', 'T034', 3),
+('DT017', 'T027', 60), ('DT017', 'T034', 4), ('DT017', 'T036', 30),
+('DT018', 'T032', 1), ('DT018', 'T043', 1), ('DT018', 'T045', 1), ('DT018', 'T034', 2),
+('DT019', 'T002', 1), ('DT019', 'T003', 1), ('DT019', 'T004', 60),
+('DT020', 'T019', 2)
 CREATE TABLE DICHVU
 (
    MaDV varchar(10) primary key,
@@ -275,7 +303,7 @@ INSERT INTO DICHVU VALUES
 ('K15DV03', N'Niềng Răng', 30000000, 'K15')
 
 
-CREATE TABLE HOADON 
+CREATE TABLE HOADONTHUOC
 (
    MaHD varchar(10) primary key,
    MaDT varchar(10) not null, 
@@ -285,10 +313,14 @@ CREATE TABLE HOADON
    NgayLap date not null,
    Tongtien float check(Tongtien > 0)
 )
-SELECT * FROM hoadon
+SELECT * FROM hoadonTHUOC
+EXEC sp_rename 'HOADON', 'HOADONTHUOC'
 
-
-
+INSERT INTO HOADONTHUOC VALUES
+('HD001', 'DT001', 'BN01', '08/19/2024',
+('HD002', 'DT002', 'BN02', '07/22/2024',
+('HD003', 'DT003', 'BN04', '08/06/2024',
+('HD004', ''
 CREATE TABLE HOADONDV
 (
    MaHD varchar(10) not null,
