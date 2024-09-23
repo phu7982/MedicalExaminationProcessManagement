@@ -124,17 +124,20 @@ CREATE TABLE THUOC
 SELECT * FROM thuoc
 
 ALTER TABLE THUOC
-add Donvi nvarchar(10)
+Drop column MoTa
 
 ALTER TABLE THUOC
-add MoTa nvarchar(150)
+add MoTa nvarchar(250)
 
 INSERT INTO THUOC VALUES
+--THUOC TIM MACH
 ('T001', 'Dacolfort Danapha', 2600, N'Viên', N'Chỉ định để điều trị những triệu chứng có liên quan đến suy tĩnh mạch, mạch bạch huyết'),
 ('T002', 'Henex 500mg Abbott', 220000, N'Hộp', N'Điều trị các triệu chứng và dấu hiệu của suy tĩnh mạch – mạch bạch huyết'),
 ('T003', 'Solufemo Hataphar', 185000, N'Hộp', N'Điều trị và dự phòng các loại thiếu máu do thiếu sắt, cần bổ sung sắt'),
 ('T004', 'Tebonin 120mg', 11267, N'Viên', N'Chỉ định điều trị các trường hợp rối loạn tuần hoàn máu não và ngoại biên'),
 ('T005', 'Cardicor Mekophar 5mg', 3600, N'Viên', N'Điều trị cao huyết áp từ nhẹ đến vừa, các chứng đau thắt ngực trong bệnh mạch vành'),
+
+--THUOC TIEU HOA
 ('T006', 'Bioflora 100mg Biocodex', 6000, N'Gói', N'Điều trị và ngăn ngừa bệnh tiêu chảy cấp tái phát'),
 ('T007', 'Detriat', 124000, N'Hộp', N'Điều chỉnh hoạt động của hệ cơ trơn đặc biệt tác dụng tốt trên hệ tiêu hóa'),
 ('T008', 'Entero-Caps 200mg Domesco', 4000, N'Viên', N'điều trị tiêu chảy cấp tính do nhiễm khuẩn, không có dấu hiệu xâm lấn (suy giảm tổng trạng, sốt cao, dấu hiệu nhiễm trùng - nhiễm độc...'),
@@ -144,34 +147,64 @@ INSERT INTO THUOC VALUES
 ('T012', 'Alumina Nadyphar', 18000, N'Hộp', N'Chỉ định trong điều trị hỗ trợ giảm viêm loét dạ dày - tá tràng và giúp làm giảm các triệu chứng do tăng acid dạ dày'),
 ('T013', 'Cholapan OPC', 90000, N'Hộp', N'điều trị các triệu chứng đầy hơi, sình bụng, đau thượng vị, ăn uống khó tiêu, ợ chua'),
 ('T014', 'Pantoloc 40mg Takeda', 2900, N'Viên', N'điều trị viêm thực quản do trào ngược, loét dạ dày, loét tá tràng'),
+
+--THUOC CO - XUONG - KHOP
 ('T015', 'Otibone 750 Boston', 1400, N'Viên', N'Chỉ định trong các trường hợp làm giảm triệu chứng của thoái hóa khớp gối nhẹ và trung bình'),
 ('T016', 'Methocarbamol 500mg', 2100, N'Viên', N'Điều trị ngắn hạn các cơn đau và co thắt cơ do chấn thương như bong gân, trật khớp'),
 ('T017', 'Mydocalm 150 Gedeon', 210000, N'Hộp', N'Điều trị sự tăng trương lực cơ xương trong các rối loạn thần kinh thực thể, tăng trương lực cơ, co thắt cơ và các co thắt kèm theo các bệnh vận động'),
 ('T018', 'Davita Bone Sugar Free DHG', 21500, N'Tuýp', N'Phòng và điều trị bệnh loãng xương ở những đối tượng có nguy cơ cao'),
 ('T019', 'Dochicin 1mg Domesco', 190000, N'Hộp', N'Phòng và điều trị bệnh gout cấp độ nhẹ'),
+
+--THUOC THAN KINH
 ('T020', 'Zapnex-10 DaviPharm', 225000, N'Hộp', N'Điều trị duy trì bệnh tâm thần phân liệt, cũng như các bệnh loạn thần khác'),
 ('T021', 'Lyrica 75mg Pfizer', 5200, N'Viên', N'Điều trị đau thần kinh nguồn gốc trung ương và ngoại vi, rối loạn lo âu lan tỏa ở người lớn'),
 ('T022', 'Mifexton 500 Mediplantex', 430000, N'Hộp', N'dùng trong các trường hợp mắc bệnh não cấp tính, bệnh não mạn tính và điều trị Parkinson'),
 ('T023', N'Hoạt Huyết Nhất Nhất', 115000, N'Hộp', N'Điều trị các chứng huyết hư, ứ trệ, phòng ngừa và điều trị thiểu năng tuần hoàn não'),
 ('T024', N'Hoạt Huyết Dưỡng Não Traphaco', 95000, N'Hộp', N'tác dụng bổ khí huyết, phòng và điều trị các bệnh suy giảm trí nhớ, căng thẳng thần kinh, đau đầu, hoa mắt, chóng mặt, mất ngủ'),
+
+--THUOC DI UNG
 ('T025', 'Bostanex Boston', 35000, N'Chai', N'Chỉ định để làm giảm các triệu chứng liên quan đến viêm mũi dị ứng, nổi mày đay'),
 ('T026', 'Xyzal 5mg GSK', 3600, N'Viên', N'Thuốc được dùng để điều trị các triệu chứng viêm mũi dị ứng và mày đay mạn tính'),
+
+--THUOC BO SUNG VITAMIN
 ('T027', 'Magne-B6 Corbière Sanofi', 1900, N'Viên', N'Dùng để điều trị các trường hợp thiếu magnesi riêng biệt hay kết hợp'),
 ('T028', 'Pokemine 50mg Medisun', 125000, N'Hộp', N'ổ sung sắt cho bệnh nhân có nguy cơ bị thiếu máu do thiếu sắt như: Phụ nữ mang thai, người vừa phẫu thuật, người suy dinh dưỡng, trẻ em thiếu máu do thiếu sắt'),
-('T029', N'Zinc-Kid Inmed Nam Hà' 3400, N'Gói', N'Bổ sung kẽm vào chế độ ăn hàng ngày và điều trị các trường hợp thiếu kẽm từ nhẹ đến vừa và nặng'),
+('T029', N'Zinc-Kid Inmed Nam Hà', 3400, N'Gói', N'Bổ sung kẽm vào chế độ ăn hàng ngày và điều trị các trường hợp thiếu kẽm từ nhẹ đến vừa và nặng'),
 ('T030', 'Kidrinks Phargington', 230000, N'Hộp', N'Được dùng để bổ sung vitamin A, D, B1, B2, B6, B12 cho trẻ'),
 ('T031', 'Pecaldex Nadyphar', 41000, N'Hộp', N'Bổ sung canxi trong trường hợp thiếu canxi, trẻ em chậm lớn'),
 ('T032', 'A.T Ascorbic Syrup 100mg', 60000, N'Hộp', N'Sử dụng để bổ sung vitamin C, phòng và điều trị bệnh scorbut'),
 ('T033', 'Enervon United', 30000, N'Hộp', N'Điều trị thiếu vitamin C và B ở người lớn và thanh thiếu niên trên 16 tuổi trong trường hợp thiếu hụt'),
-('T034', N'Dung dịch Ringer Lactate' 100000, N'Chai',N'Truyền dung dịch trong trường hợp mất nước nặng, không thể bồi phụ được bằng đường uống (người bệnh hôn mê, uống vào nôn ngay, trụy mạch,...)'),
+('T034', N'Dung dịch Ringer Lactate', 100000, N'Chai',N'Truyền dung dịch trong trường hợp mất nước nặng, không thể bồi phụ được bằng đường uống (người bệnh hôn mê, uống vào nôn ngay, trụy mạch,...)'),
 ('T035', 'Oresol 245 DHG', 1400, N'Gói', N'Dùng để thay thế nước và chất điện giải bị mất trong các trường hợp: Tiêu chảy cấp, nôn mửa, sốt cao, sốt xuất huyết,...'),
+
+--THUOC KHANG SINH
 ('T036', 'Bromanase', 3900, N'Viên', N'Điều trị viêm sưng, chống phù nề sau khi phẫu thuật và chấn thương hiệu quả'),
-('T034', 'Acemol 325mg Nadyphar', 11000, N'Hộp', N'Chỉ định trong điều trị hỗ trợ giảm đau và hạ sốt trong nhiều trường hợp'),
-('T035', 'Cledomox 625 Tenamyd', 80000, N'Hộp', N'Dùng cho bệnh nhân điều trị các bệnh nhiễm khuẩn do các vi khuẩn nhạy cảm'),
-('T036', 'Amoxicillin 250mg Imexpharm', 6000, N'Gói', N'điều trị các nhiễm khuẩn do các vi khuẩn nhạy cảm với thuốc tại các vị trí: Đường hô hấp trên, đường hô hấp dưới, nhiễm khuẩn đường mật, đường tiêu hóa'),
-('T037', 'Pms-Azimax 500mg Imexpharm', 48000, N'Hộp', N'điều trị nhiễm trùng gây ra do các vi khuẩn nhạy cảm với thuốc như nhiễm trùng đường hô hấp trên, viêm xoang, viêm amiđan, viêm tai giữa'),
+('T037', 'Acemol 325mg Nadyphar', 11000, N'Hộp', N'Chỉ định trong điều trị hỗ trợ giảm đau và hạ sốt trong nhiều trường hợp'),
+('T038', 'Cledomox 625 Tenamyd', 80000, N'Hộp', N'Dùng cho bệnh nhân điều trị các bệnh nhiễm khuẩn do các vi khuẩn nhạy cảm'),
+('T039', 'Amoxicillin 250mg Imexpharm', 6000, N'Gói', N'điều trị các nhiễm khuẩn do các vi khuẩn nhạy cảm với thuốc tại các vị trí: Đường hô hấp trên, đường hô hấp dưới, nhiễm khuẩn đường mật, đường tiêu hóa'),
 
+--THUOC DUONG HO HAP
+('T040', 'Pms-Azimax 500mg Imexpharm', 48000, N'Hộp', N'điều trị nhiễm trùng gây ra do các vi khuẩn nhạy cảm với thuốc như nhiễm trùng đường hô hấp trên, viêm xoang, viêm amiđan, viêm tai giữa'),
+('T041', 'Kipel 10mg MEGA We care', 120000, N'Hộp', N'Dự phòng và điều trị hen phế quản mạn tính, dự phòng cơn co thắt phế quản do gắng sức; điều trị triệu chứng viêm mũi dị ứng'),
+('T042', N'Khí dung Seretide Evohaler DC 25/250 Gsk', 150000, N'Hộp', N'Thuốc dùng điều trị bệnh hen phế quản và bệnh tắc nghẽn phổi mạn tính'),
 
+--THUOC THAN
+('T043', 'Ketosteril Fresenius Kabi', 90000, N'Hộp', N'Phòng ngừa và điều trị bệnh do rối loạn hoặc suy giảm cơ chế chuyển hoá protein trong bệnh suy thận mạn'),
+('T044', 'Keamine Stella', 150000, N'Hộp', N'Dùng để ngăn ngừa và điều trị bệnh do rối loạn hay suy giảm cơ chế chuyển hóa protein ở người suy thận mạn tính'),
+('T045', 'Furagon Mekophar', 90000, N'Hộp', N'phòng tránh và điều trị bệnh do rối loạn hoặc suy giảm cơ chế chuyển hóa protein trong bệnh suy thận mạn'),
+
+--THUOC TAI - MUI - HONG
+('T046', 'Otifar Pharmedic', 7000, N'Chai', N'định để điều trị nhiễm khuẩn do viêm tai ngoài: Viêm tai giữa cấp xung huyết'),
+('T047', 'Oteotan 1mg/0.5ml Lesvi', 26000, N'Hộp', N'chỉ định để điều trị viêm tai ngoài cấp tính và viêm tai giữa có mủ mạn tính'),
+('T048', 'Ultibro Breezhaler 110/50mcg Novartis', 68000, N'Hộp', N'Điều trị duy trì để làm giảm triệu chứng và làm giảm các đợt cấp ở bệnh nhân mắc bệnh phổi mạn tính tắc nghẽn (COPD)'),
+('T049', 'Anoro Ellipta 62.5/25mcg GSK', 80000, N'Hộp', N'Điều trị duy trì giãn phế quản để làm giảm các triệu chứng ở người lớn bị bệnh phổi tắc nghẽn mạn tính (COPD)'),
+('T050', 'Bambuterol 10 A.T', 49000, N'Hộp', N'Sử dụng để điều trị hen phế quản, viêm phế quản mạn tính, khí phế thủng và các bệnh lý phổi khác có kèm co thắt'),
+
+('T051', N'Dung dịch tiêm Gentamicin 80mg HDPharma', 40000, N'Vỉ', N'điều trị các bệnh nhiễm khuẩn nặng toàn thân gây ra bởi các vi khuẩn gram âm và các vi khuẩn khác còn nhạy cảm'),
+
+--THUOC TIET NIEU
+('T052', 'Xatral XL 10mg', 80000, N'Hộp', N'Dùng để điều trị triệu chứng chức năng của phì đại (tăng thể tích) lành tính tuyến tiền liệt'),
+('T053', 'YSPuripax', 46000, N'Hộp', N'dùng để giảm triệu chứng tiểu khó và đau trên khớp mu bàng quang, tiểu đêm, tiểu nhiều lần và không kiểm soát được liên quan đến viêm bàng quang, tuyến tiền liệt, viêm niệu đạo,...')
 CREATE TABLE DONTHUOC
 (
    MaDT varchar(10) primary key,
@@ -182,7 +215,12 @@ CREATE TABLE DONTHUOC
 )
 SELECT * FROM donthuoc
 
-
+INSERT INTO DONTHUOC VALUES
+('DT001', 'BN01', 'K02BS01'),
+('DT002', 'BN02', 'K14BS01'),
+('DT003', 'BN04', 'K02BS02'),
+('DT004', 'BN05', 'K09BS01'),
+('DT005', 'BN06', 'K13BS01'),
 
 CREATE TABLE CT_DONTHUOC 
 (
@@ -195,6 +233,11 @@ CREATE TABLE CT_DONTHUOC
 )
 SELECT * FROM ct_donthuoc
 
+INSERT INTO CT_DONTHUOC VALUES
+('DT001', 'T008', 2),
+('DT002', 'T050', 1),
+('DT003', 'T006', 12),
+('DT00'
 
 
 CREATE TABLE DICHVU
